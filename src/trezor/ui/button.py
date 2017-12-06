@@ -32,11 +32,13 @@ class Button(Widget):
         self.state = BTN_DIRTY
 
     def enable(self):
-        self.state &= ~BTN_DISABLED
-        self.state |= BTN_DIRTY
+        if self.state & BTN_DISABLED:
+            self.state &= ~BTN_DISABLED
+            self.state |= BTN_DIRTY
 
     def disable(self):
-        self.state |= BTN_DISABLED | BTN_DIRTY
+        if not self.state & BTN_DISABLED:
+            self.state |= BTN_DISABLED | BTN_DIRTY
 
     def taint(self):
         self.state |= BTN_DIRTY

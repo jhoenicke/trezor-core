@@ -131,6 +131,13 @@ BTN_KEY_ACTIVE = {
     'border-color': FG,
     'radius': RADIUS,
 }
+BTN_KEY_DISABLED = {
+    'bg-color': BG,
+    'fg-color': GREY,
+    'text-style': MONO,
+    'border-color': BG,
+    'radius': RADIUS,
+}
 
 # loader
 LDR_DEFAULT = {
